@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notatnik</title>
+    <link rel="shortcut icon" href="ico.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Notatnik</h1>
+      <div>
+        <button class="add-note-btn" id="addNoteBtn">+ Dodaj notatkę</button>
+        <button type="button" id="themeToggleBtn" class="theme-toggle-btn">
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <main id="notesContainer" class="notes-grid"></main>
+
+    <dialog id="noteDialog" aria-labelledby="dialogTitle" role="dialog">
+      <div class="dialog-content">
+        <div class="dialog-header">
+          <h2 class="dialog-title" id="dialogTitle">Dodaj nową notatkę</h2>
+          <button type="button" class="close-btn" id="closeDialogBtn">
+            ❌
+          </button>
+        </div>
+
+        <form id="noteForm">
+          <div class="form-group">
+            <label for="noteTitle" class="form-label">Tytuł</label>
+            <input
+              type="text"
+              id="noteTitle"
+              class="form-input"
+              placeholder="Wprowadź tytuł notatki..."
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="noteContent" class="form-label">Treść</label>
+            <textarea
+              id="noteContent"
+              class="form-textarea"
+              placeholder="Napisz swoją notatkę tutaj..."
+            ></textarea>
+          </div>
+
+          <div class="dialog-actions">
+            <button type="button" class="cancel-btn" id="cancelDialogBtn">
+              Anuluj
+            </button>
+            <button type="submit" class="save-btn">Zapisz notatkę</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+  </body>
+</html>
