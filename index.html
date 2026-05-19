@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
@@ -13,9 +13,7 @@
       <h1>Notatnik</h1>
       <div>
         <button class="add-note-btn" id="addNoteBtn">+ Dodaj notatkę</button>
-        <button type="button" id="themeToggleBtn" class="theme-toggle-btn">
-          🌙
-        </button>
+        <button type="button" id="themeToggleBtn" class="theme-toggle-btn">🌙</button>
       </div>
     </header>
 
@@ -25,9 +23,7 @@
       <div class="dialog-content">
         <div class="dialog-header">
           <h2 class="dialog-title" id="dialogTitle">Dodaj nową notatkę</h2>
-          <button type="button" class="close-btn" id="closeDialogBtn">
-            ❌
-          </button>
+          <button type="button" class="close-btn" id="closeDialogBtn">❌</button>
         </div>
 
         <form id="noteForm">
@@ -37,6 +33,7 @@
               type="text"
               id="noteTitle"
               class="form-input"
+              required
               placeholder="Wprowadź tytuł notatki..."
             />
           </div>
@@ -46,14 +43,13 @@
             <textarea
               id="noteContent"
               class="form-textarea"
+              required
               placeholder="Napisz swoją notatkę tutaj..."
             ></textarea>
           </div>
 
           <div class="dialog-actions">
-            <button type="button" class="cancel-btn" id="cancelDialogBtn">
-              Anuluj
-            </button>
+            <button type="button" class="cancel-btn" id="cancelDialogBtn">Anuluj</button>
             <button type="submit" class="save-btn">Zapisz notatkę</button>
           </div>
         </form>

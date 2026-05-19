@@ -1,42 +1,56 @@
-# Notatnik – Prosta aplikacja do notatek w przeglądarce
+# 📝 Notatnik
 
-Minimalistyczna aplikacja do tworzenia, edycji i usuwania notatek – wszystko dzieje się w przeglądarce.  
-Dane są automatycznie zapisywane w localStorage, dzięki czemu notatki pozostają dostępne nawet po zamknięciu karty lub przeglądarki.
+Prosta aplikacja do zarządzania notatkami zbudowana w czystym HTML, CSS i JavaScript — bez żadnych frameworków ani bibliotek.
 
-Żadnych frameworków, bundlerów ani zewnętrznych bibliotek – tylko czysty HTML, CSS i JavaScript.
+---
 
-## Główne funkcjonalności
+## 🚀 Demo
 
-- Tworzenie nowej notatki (tytuł + treść)
-- Edycja istniejących notatek
-- Usuwanie notatek
-- Automatyczne zapisywanie w localStorage
-- Wyświetlanie daty utworzenia / edycji
-- Responsywny układ (działa na telefonach i komputerach)
-- Prosty, czytelny design
+> Otwórz `index.html` w przeglądarce — gotowe. Zero konfiguracji, zero zależności.
 
-## Technologie
+---
 
-- HTML5
-- CSS3 (Flexbox + media queries)
-- Vanilla JavaScript (ES6+)
+## ✨ Funkcje
 
-## Jak uruchomić lokalnie
+- **Dodawanie notatek** — tytuł, treść i automatyczna data
+- **Edycja notatek** — zmień co chcesz, kiedy chcesz
+- **Usuwanie notatek** — z potwierdzeniem przez hover
+- **Dark mode** — przełącznik 🌙 / 🌞 z zapisem preferencji
+- **Zapis lokalny** — notatki trzymane w `localStorage`, przeżywają odświeżenie strony
+- **Responsywność** — siatka dopasowuje się do szerokości ekranu
 
-1. Sklonuj repozytorium  
-   ``` git clone https://github.com/michalpawlowski-mp/Notebook.git```
+---
 
-2. Otwórz plik index.html w przeglądarce  
-   ``` open index.html```          # macOS  
-   ``` start index.html```         # Windows  
-   ``` xdg-open index.html```      # Linux  
+## 🛠️ Technologie
 
-   albo po prostu kliknij dwukrotnie na plik index.html
+| Technologia       | Zastosowanie                             |
+| ----------------- | ---------------------------------------- |
+| HTML5             | Semantyczna struktura, `<dialog>` API    |
+| CSS3              | CSS Variables, Grid, animacje, dark mode |
+| JavaScript (ES6+) | Logika aplikacji, DOM, localStorage      |
 
-## Demo na żywo
+---
 
-https://michalpawlowski-mp.github.io/Notebook/
+## 🏃 Uruchomienie
 
-## Autor
+Sklonuj repozytorium i otwórz `index.html`:
 
-[Michał Pawłowski (LinkedIn)](https://www.linkedin.com/in/michalpawlowski-mp/)
+```bash
+git clone https://github.com/twoj-login/notatnik.git
+cd notatnik
+# otwórz index.html w przeglądarce
+```
+
+Lub użyj rozszerzenia **Live Server** w VS Code — prawy klik na `index.html` → _Open with Live Server_.
+
+---
+
+## 📸 Zrzut ekranu
+
+> _(dodaj screenshota aplikacji)_
+
+---
+
+## 👨‍💻 Autor
+
+💡 Stworzony przez [Michał Pawłowski (Linkedin)](https://www.linkedin.com/in/michalpawlowski-mp/)
