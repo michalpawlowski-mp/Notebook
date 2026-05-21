@@ -15,26 +15,25 @@ const cancelDialogBtn = document.getElementById("cancelDialogBtn");
 const loadNotes = () => JSON.parse(localStorage.getItem("notes") || "[]");
 const saveNotes = () => localStorage.setItem("notes", JSON.stringify(notes));
 const closeNoteDialog = () => noteDialog.close();
-const dateToDay = () => new Date().toLocaleDateString("pl-PL");
+const today = () => new Date().toLocaleDateString("pl-PL");
 
 const saveNote = (event) => {
   event.preventDefault();
 
-  const title = titleInput.value.trim();
-  const content = contentInput.value.trim();
+  const [title, content] = [titleInput, contentInput].map((el) => el.value.trim());
 
   if (editNoteId) {
     const noteIndex = notes.findIndex((note) => note.id === editNoteId);
     notes[noteIndex] = {
       ...notes[noteIndex],
-      date: dateToDay(),
+      date: today(),
       title,
       content,
     };
   } else {
     notes.unshift({
       id: Date.now().toString(),
-      date: dateToDay(),
+      date: today(),
       title,
       content,
     });
@@ -55,9 +54,17 @@ const renderNotes = () => {
   notesContainer.innerHTML = "";
 
   if (notes.length === 0) {
-    notesContainer.textContent = "Brak notatek";
+    notesContainer.classList.add("notes-grid--empty");
+    notesContainer.innerHTML = `
+      <div class="empty-state">
+        <h2>Brak notatek</h2>
+        <p>Dodaj swoją pierwszą notatkę!</p>
+      </div>
+    `;
     return;
   }
+
+  notesContainer.classList.remove("notes-grid--empty");
 
   notes.forEach((note) => {
     const card = document.createElement("div");
@@ -109,18 +116,12 @@ const renderNotes = () => {
 };
 
 const openNoteDialog = (noteId = null) => {
-  if (noteId) {
-    const noteToEdit = notes.find((note) => note.id === noteId);
-    editNoteId = noteId;
-    dialogTitle.textContent = "Edytuj notatkę";
-    titleInput.value = noteToEdit.title;
-    contentInput.value = noteToEdit.content;
-  } else {
-    editNoteId = null;
-    dialogTitle.textContent = "Dodaj nową notatkę";
-    titleInput.value = "";
-    contentInput.value = "";
-  }
+  const noteToEdit = noteId ? notes.find((note) => note.id === noteId) : null;
+
+  editNoteId = noteId;
+  dialogTitle.textContent = noteId ? "Edytuj notatkę" : "Dodaj nową notatkę";
+  titleInput.value = noteToEdit?.title ?? "";
+  contentInput.value = noteToEdit?.content ?? "";
 
   noteDialog.showModal();
   titleInput.focus();
